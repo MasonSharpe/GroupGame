@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
             timerStartup = float.PositiveInfinity;
             weapon.GetComponent<SpriteRenderer>().enabled = true;
             weapon.transform.localPosition = Vector3.zero;
-            timerReload = 0.5f;
+            timerReload = 0.2f;
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Vector3 diff = mousePosition - weapon.transform.position;
