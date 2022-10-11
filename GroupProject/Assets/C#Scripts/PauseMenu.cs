@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject AreYouSure;
     private void Start()
     {
         GetComponent<Canvas>().enabled = false;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && AreYouSure.GetComponent<Canvas>().enabled == false)
+
         {
             if (Time.timeScale != 0)
             {
@@ -42,9 +44,10 @@ public class PauseMenu : MonoBehaviour
         //Scene scene = SceneManager.GetActiveScene();
         //SceneManager.LoadScene(scene.name);
     //}
-    public void MainMenu()
+    public void MainMenuCheck()
     {
-        SceneManager.LoadScene("SampleScene");
+        AreYouSure.GetComponent<Canvas>().enabled = true;
+        Time.timeScale = 0;
     }
     //public void Close()
     //{
