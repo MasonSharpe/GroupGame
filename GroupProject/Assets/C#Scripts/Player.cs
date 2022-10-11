@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 10f;
+    public GameObject weapon;
     // Start is called before the first frame update
     void Start()
     {
