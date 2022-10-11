@@ -17,7 +17,12 @@ public class Player : MonoBehaviour
     {
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 shootDir = mousePosition - transform.position;
+        shootDir.Normalize();
         Vector2 moveDirection = new Vector2(xInput, yInput);
         GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
+        weapon.transform.Rotate(new Vector3(0, 0, 1));
     }
 }
