@@ -1,0 +1,928 @@
+fileFormatVersion: 2
+guid: e421071a5f80b85419ec3769a2fa2ddb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 677767931218745713
+    second: frest_0
+  - first:
+      213: -4331519173670459816
+    second: frest_1
+  - first:
+      213: 8882379112065737226
+    second: frest_2
+  - first:
+      213: -5362118065655006848
+    second: frest_3
+  - first:
+      213: 3098080116964758574
+    second: frest_4
+  - first:
+      213: -1026693879638093221
+    second: frest_5
+  - first:
+      213: -6745473999077593312
+    second: frest_6
+  - first:
+      213: -2725875721483156528
+    second: frest_7
+  - first:
+      213: 3174117413679945317
+    second: frest_8
+  - first:
+      213: -2912818671675576034
+    second: frest_9
+  - first:
+      213: 1843094613024153138
+    second: frest_10
+  - first:
+      213: 8983552544736529568
+    second: frest_11
+  - first:
+      213: 1022137361369876988
+    second: frest_12
+  - first:
+      213: 8753598789015103588
+    second: frest_13
+  - first:
+      213: -7572083385759099728
+    second: frest_14
+  - first:
+      213: -1808401936850518845
+    second: frest_15
+  - first:
+      213: -8906137709313962416
+    second: frest_16
+  - first:
+      213: -5890455264845655307
+    second: frest_17
+  - first:
+      213: 6244216111546782518
+    second: frest_18
+  - first:
+      213: -7517721471088241167
+    second: frest_19
+  - first:
+      213: -1096041795167134749
+    second: frest_20
+  - first:
+      213: 7703909086315959083
+    second: frest_21
+  - first:
+      213: 4618494673503505793
+    second: frest_22
+  - first:
+      213: 3075003083786078485
+    second: frest_23
+  - first:
+      213: 4317768207651845012
+    second: frest_24
+  - first:
+      213: 5620924406723536285
+    second: frest_25
+  - first:
+      213: -1328027456133536509
+    second: frest_26
+  - first:
+      213: 6350898216083653873
+    second: frest_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frest_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 179d17ca75ae76900800000000000000
+      internalID: 677767931218745713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856249bc24a53e3c0800000000000000
+      internalID: -4331519173670459816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a022707ddbc844b70800000000000000
+      internalID: 8882379112065737226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089bdec670ee595b0800000000000000
+      internalID: -5362118065655006848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e249269b3779efa20800000000000000
+      internalID: 3098080116964758574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b529a1b2b5370c1f0800000000000000
+      internalID: -1026693879638093221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fa85b03234362a0800000000000000
+      internalID: -6745473999077593312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3822f397ebb2ad0800000000000000
+      internalID: -2725875721483156528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56656c578fabc0c20800000000000000
+      internalID: 3174117413679945317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11f6a3d9d69397d0800000000000000
+      internalID: -2912818671675576034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e9db019ccf39910800000000000000
+      internalID: 1843094613024153138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acc31a417dfbac70800000000000000
+      internalID: 8983552544736529568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf94b10c38c5f2e00800000000000000
+      internalID: 1022137361369876988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468e88558b70b7970800000000000000
+      internalID: 8753598789015103588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4113e774e8ae690800000000000000
+      internalID: -7572083385759099728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc75ee050447e6e0800000000000000
+      internalID: -1808401936850518845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e41aba0fa076480800000000000000
+      internalID: -8906137709313962416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f29b854526e04ea0800000000000000
+      internalID: -5890455264845655307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633548d5879e7a650800000000000000
+      internalID: 6244216111546782518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f555731720bba790800000000000000
+      internalID: -7517721471088241167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebd41c5bc31ac0f0800000000000000
+      internalID: -1096041795167134749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2354c73f78c9ea60800000000000000
+      internalID: 7703909086315959083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18dc53b8f60381040800000000000000
+      internalID: 4618494673503505793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519cc4c330b9caa20800000000000000
+      internalID: 3075003083786078485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493309fee4bcbeb30800000000000000
+      internalID: 4317768207651845012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95641c87f8810e40800000000000000
+      internalID: 5620924406723536285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305e1399016e19de0800000000000000
+      internalID: -1328027456133536509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frest_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4045e674ce22850800000000000000
+      internalID: 6350898216083653873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
