@@ -10,29 +10,10 @@ public class Levels : MonoBehaviour
     {
         GetComponent<Canvas>().enabled = true;
     }
-    public void Level1()
-	{
-        SceneManager.LoadScene("GameScene");
-        Time.timeScale = 1;
-	}
-    public void Level2()
-	{
-        SceneManager.LoadScene("Level2");
-        Time.timeScale = 1;
-	}
-    public void Level3()
-	{
-        SceneManager.LoadScene("Level3");
-        Time.timeScale = 1;
-	}
-    public void Level4()
+
+    public void SelectLevel(int number)
     {
-        SceneManager.LoadScene("Level4");
-        Time.timeScale = 1;
-    }
-    public void Level5()
-    {
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level" + number);
         Time.timeScale = 1;
     }
 }
