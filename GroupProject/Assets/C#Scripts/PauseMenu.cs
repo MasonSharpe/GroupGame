@@ -42,10 +42,10 @@ public class PauseMenu : MonoBehaviour
         //Scene scene = SceneManager.GetActiveScene();
         //SceneManager.LoadScene(scene.name);
     //}
-    //public void MainMenu()
-    //{
-        //SceneManager.LoadScene("SampleScene");
-    //}
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
     //public void Close()
     //{
         //Time.timeScale = 0;
