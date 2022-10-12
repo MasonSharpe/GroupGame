@@ -22,7 +22,6 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(Player.damage);
         int tempDamage = Player.damage;
         float tempSStartup = Player.swingStartup;
         float tempSDuration = Player.swingDuration;
