@@ -7,7 +7,11 @@ public class Player : MonoBehaviour
     public float speed = 10f;
     public GameObject weapon;
     float timerReload = -1;
-    float timerStartup = -1;
+    float timerStartup = float.PositiveInfinity;
+    public static int damage = 50;
+    public static float swingStartup = 0.5f;
+    public static int swingSpeed = 15;
+    public static float swingDuration = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +23,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && Time.timeScale != 0)
         {
-            timerStartup = 0.5f;
+            timerStartup = swingStartup;
         }
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
@@ -37,14 +41,14 @@ public class Player : MonoBehaviour
             timerStartup = float.PositiveInfinity;
             weapon.GetComponent<SpriteRenderer>().enabled = true;
             weapon.transform.localPosition = Vector3.zero;
-            timerReload = 0.2f;
+            timerReload = swingDuration;
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Vector3 diff = mousePosition - weapon.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             weapon.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-            weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * 10) + (moveDirection * speed);
+            weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed) + (moveDirection * speed);
         }
     }
 }
