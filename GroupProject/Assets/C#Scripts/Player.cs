@@ -8,10 +8,15 @@ public class Player : MonoBehaviour
     public GameObject weapon;
     float timerReload = -1;
     float timerStartup = float.PositiveInfinity;
+    float timerDash = -1;
+    Vector2 dashCurSpeed;
     public static int damage = 50;
     public static float swingStartup = 0.5f;
     public static int swingSpeed = 15;
     public static float swingDuration = 0.5f;
+    Vector3 positionLastFrame;
+    bool inDash = false;
+    Vector3 mouseTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +26,40 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0)
-        {
-            timerStartup = swingStartup;
-        }
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
-        GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
+        positionLastFrame = transform.position;
+        if (Input.GetButtonDown("Jump") && Time.timeScale != 0)
+        {
+            dashCurSpeed = moveDirection * speed * 3;
+            inDash = true;
+            timerDash = 0.2f;
+            GetComponent<Rigidbody2D>().velocity = dashCurSpeed;
+        }
+        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash)
+        {
+            timerStartup = swingStartup;
+            mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            GetComponent<Rigidbody2D>().velocity = moveDirection;
+        }
+        if (!inDash && timerStartup > 100)
+        {
+            GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
+        }
+        else
+        {
+            timerDash -= Time.deltaTime;
+            if (timerDash <= 0)
+            {
+                dashCurSpeed *= 0.9f;
+                if (Mathf.Abs(dashCurSpeed.x) + Mathf.Abs(dashCurSpeed.y) < 1)
+                {
+                    dashCurSpeed = Vector2.zero;
+                    inDash = false;
+                }
+            }
+        }
         timerReload -= Time.deltaTime;
         timerStartup -= Time.deltaTime;
         if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true)
@@ -42,13 +73,12 @@ public class Player : MonoBehaviour
             weapon.GetComponent<SpriteRenderer>().enabled = true;
             weapon.transform.localPosition = Vector3.zero;
             timerReload = swingDuration;
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Vector3 mousePosition = mouseTarget;
             Vector3 diff = mousePosition - weapon.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             weapon.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-            weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed) + (moveDirection * speed);
+            weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
         }
     }
 }
