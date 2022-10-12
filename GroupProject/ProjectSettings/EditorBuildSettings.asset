@@ -23,9 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: 72751a085a98c7346bd2cc8b690e1247
-  - enabled: 1
-    path: Assets/Scenes/AreYouSure.unity
-    guid: 98fce0c314790884f93d76d7d933ee9d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: 6f2053598bdbbc843b202d8dd68cf78b
