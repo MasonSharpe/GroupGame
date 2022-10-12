@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     Vector2 dashCurSpeed;
     public static int damage = 50;
     public static float swingStartup = 0.5f;
-    public static int swingSpeed = 15;
-    public static float swingDuration = 0.5f;
+    public static int swingSpeed = 30;
+    public static float swingDuration = 0.2f;
     Vector3 positionLastFrame;
     bool inDash = false;
     Vector3 mouseTarget;
@@ -34,8 +34,12 @@ public class Player : MonoBehaviour
         {
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
-            timerDash = 0.2f;
+            timerDash = 0.1f;
             GetComponent<Rigidbody2D>().velocity = dashCurSpeed;
+            if (Mathf.Abs(dashCurSpeed.x) + Mathf.Abs(dashCurSpeed.y) == 2)
+            {
+                GetComponent<Rigidbody2D>().velocity /= 2;
+            }
         }
         if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash)
         {
