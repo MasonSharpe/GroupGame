@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xInput = Input.GetAxis("Horizontal");
+        float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
         positionLastFrame = transform.position;
-        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0)
+        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0) //DASH INITILIZATION
         {
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
@@ -42,17 +42,19 @@ public class Player : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity /= 2;
             }
         }
-        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash)
+        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash) // ATTACK INITILIZATION
         {
             timerStartup = swingStartup;
             mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GetComponent<Rigidbody2D>().velocity = moveDirection;
         }
-        if (timerStartup > 100 && !inDash)
+        if (timerStartup > 100 && !inDash) // BASIC MOVEMENT
         {
             GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
+            GetComponent<Animator>().SetFloat("xInput", moveDirection.x);
+            GetComponent<Animator>().SetFloat("yInput", moveDirection.y);
         }
-        if (inDash)
+        if (inDash) // DASH COUNTDOWN/ENDING
         {
             timerDash -= Time.deltaTime;
             if (timerDash <= 0)
@@ -66,15 +68,15 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        timerReload -= Time.deltaTime;
+        timerReload -= Time.deltaTime; // TIMERS
         timerStartup -= Time.deltaTime;
         timerPreDash -= Time.deltaTime;
-        if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true)
+        if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true) // HIDES WEAPON AFTER TIME
         {
             weapon.GetComponent<SpriteRenderer>().enabled = false;
             weapon.transform.localPosition = Vector3.zero;
         }
-        if (timerStartup <= 0)
+        if (timerStartup <= 0) // ATTACK SENDOUT
         {
             timerStartup = float.PositiveInfinity;
             weapon.GetComponent<SpriteRenderer>().enabled = true;
