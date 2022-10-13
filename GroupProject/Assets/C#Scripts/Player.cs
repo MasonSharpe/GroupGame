@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     float timerReload = -1;
     float timerStartup = float.PositiveInfinity;
     float timerDash = -1;
+    float timerPreDash = -1;
     Vector2 dashCurSpeed;
     public static int damage = 50;
     public static float swingStartup = 0.5f;
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
         positionLastFrame = transform.position;
-        if (Input.GetButtonDown("Jump") && Time.timeScale != 0)
+        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0)
         {
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
@@ -47,11 +48,11 @@ public class Player : MonoBehaviour
             mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GetComponent<Rigidbody2D>().velocity = moveDirection;
         }
-        if (!inDash && timerStartup > 100)
+        if (timerStartup > 100 && !inDash)
         {
             GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
         }
-        else
+        if (inDash)
         {
             timerDash -= Time.deltaTime;
             if (timerDash <= 0)
@@ -61,11 +62,13 @@ public class Player : MonoBehaviour
                 {
                     dashCurSpeed = Vector2.zero;
                     inDash = false;
+                    timerPreDash = 1;
                 }
             }
         }
         timerReload -= Time.deltaTime;
         timerStartup -= Time.deltaTime;
+        timerPreDash -= Time.deltaTime;
         if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true)
         {
             weapon.GetComponent<SpriteRenderer>().enabled = false;
@@ -78,7 +81,7 @@ public class Player : MonoBehaviour
             weapon.transform.localPosition = Vector3.zero;
             timerReload = swingDuration;
             Vector3 mousePosition = mouseTarget;
-            Vector3 diff = mousePosition - weapon.transform.position;
+            Vector2 diff = mousePosition - weapon.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             weapon.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
