@@ -48,11 +48,11 @@ public class Player : MonoBehaviour
             mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GetComponent<Rigidbody2D>().velocity = moveDirection;
         }
-        if (!inDash && timerStartup > 100)
+        if (timerStartup > 100 && !inDash)
         {
             GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
         }
-        else
+        if (inDash)
         {
             timerDash -= Time.deltaTime;
             if (timerDash <= 0)
