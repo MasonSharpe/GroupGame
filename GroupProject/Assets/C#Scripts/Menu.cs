@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour
     }
     public void Yes()
 	{
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1;
 	}
     public void No()
