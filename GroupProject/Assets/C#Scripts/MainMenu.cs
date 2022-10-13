@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
 	}
 	public void playGame()
 	{
-		SceneManager.LoadScene("GameScene");
+		SceneManager.LoadScene("Level1");
 		Time.timeScale = 1;
 	}
 	public void Quit()
