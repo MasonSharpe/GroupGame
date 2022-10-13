@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public float swingStartup = 0.5f;
     public int swingSpeed = 30;
     public float swingDuration = 0.2f;
+    public int health = 10;
+    float timerInvincibility = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerInvincibility -= Time.deltaTime;
         Vector3 playerDir = player.transform.position - transform.position;
         float playerDist = playerDir.magnitude;
         playerDir.Normalize();
@@ -50,6 +53,15 @@ public class Enemy : MonoBehaviour
         {
             weapon.GetComponent<SpriteRenderer>().enabled = false;
             weapon.transform.localPosition = Vector3.zero;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (timerInvincibility <= 0)
+        {
+            health--;
+            timerInvincibility = 0.5f;
         }
     }
 }

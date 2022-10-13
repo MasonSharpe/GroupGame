@@ -10,14 +10,15 @@ public class Player : MonoBehaviour
     float timerStartup = float.PositiveInfinity;
     float timerDash = -1;
     float timerPreDash = -1;
+    float timerInvincibility = -1;
     Vector2 dashCurSpeed;
     public static int damage = 50;
     public static float swingStartup = 0.5f;
     public static int swingSpeed = 30;
     public static float swingDuration = 0.2f;
-    Vector3 positionLastFrame;
     bool inDash = false;
     Vector3 mouseTarget;
+    public int health = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +28,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerReload -= Time.deltaTime; // TIMERS
+        timerStartup -= Time.deltaTime;
+        timerPreDash -= Time.deltaTime;
+        timerInvincibility -= Time.deltaTime;
         float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
-        positionLastFrame = transform.position;
         if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0) //DASH INITILIZATION
         {
             dashCurSpeed = moveDirection * speed * 3;
@@ -42,7 +46,7 @@ public class Player : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity /= 2;
             }
         }
-        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash) // ATTACK INITILIZATION
+        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash && timerStartup > 100) // ATTACK INITILIZATION
         {
             timerStartup = swingStartup;
             mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -68,9 +72,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        timerReload -= Time.deltaTime; // TIMERS
-        timerStartup -= Time.deltaTime;
-        timerPreDash -= Time.deltaTime;
         if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true) // HIDES WEAPON AFTER TIME
         {
             weapon.GetComponent<SpriteRenderer>().enabled = false;
@@ -88,6 +89,24 @@ public class Player : MonoBehaviour
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             weapon.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
             weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (timerInvincibility <= 0)
+        {
+            health--;
+            timerInvincibility = 1;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (timerInvincibility <= 0)
+        {
+            health--;
+            timerInvincibility = 0.5f;
         }
     }
 }

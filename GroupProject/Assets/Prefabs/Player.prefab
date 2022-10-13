@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6085546332557356617}
   - component: {fileID: 6085546332557356616}
   - component: {fileID: 6085546332557356663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1530116237
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 6085546332817897970}
   - component: {fileID: 6085546332817897968}
   - component: {fileID: 6085546332817897969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -198,10 +198,10 @@ GameObject:
   - component: {fileID: 6085546333169068171}
   - component: {fileID: 6085546333169068172}
   - component: {fileID: 6085546333169068173}
-  - component: {fileID: 6085546333169068174}
   - component: {fileID: 6085546333169068170}
   - component: {fileID: 3081592998998667869}
-  m_Layer: 0
+  - component: {fileID: 2932529939704747033}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1701407015
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 5379287475840628085, guid: e2c18c6a21c2695429699d401fa8aa92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -296,22 +296,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &6085546333169068174
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6085546333169068175}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &6085546333169068170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   weapon: {fileID: 6085546332557356618}
+  health: 10
 --- !u!95 &3081592998998667869
 Animator:
   serializedVersion: 3
@@ -345,3 +330,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &2932529939704747033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085546333169068175}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0029311776, y: -0.03224325}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.26719892, y: 0.66584265}
+  m_EdgeRadius: 0
