@@ -107,6 +107,7 @@ public class Player : MonoBehaviour
         {
             health--;
             timerInvincibility = 0.5f;
+            collision.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }

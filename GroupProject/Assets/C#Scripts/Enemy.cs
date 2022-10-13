@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public float swingDuration = 0.2f;
     public int health = 10;
     float timerInvincibility = -1;
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,8 +61,9 @@ public class Enemy : MonoBehaviour
     {
         if (timerInvincibility <= 0)
         {
-            health--;
+            health -= Player.damage;
             timerInvincibility = 0.5f;
+            collision.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }
