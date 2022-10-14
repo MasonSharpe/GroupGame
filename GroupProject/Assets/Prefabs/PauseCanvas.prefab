@@ -170,8 +170,7 @@ GameObject:
   - component: {fileID: 2344781420218115776}
   - component: {fileID: 2344781420218115777}
   - component: {fileID: 2344781420218115838}
-  - component: {fileID: 2344781420218115839}
-  - component: {fileID: 2344781420218115778}
+  - component: {fileID: 2973706619499860520}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -262,7 +261,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &2344781420218115839
+--- !u!114 &2973706619499860520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,18 +274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreYouSure: {fileID: 0}
---- !u!114 &2344781420218115778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2344781420218115836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c8250bb954a7f148aa4b11e3535a582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2344781420238934700
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +395,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2344781420218115839}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: MainMenuCheck
         m_Mode: 1
@@ -541,7 +528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2344781420218115839}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
