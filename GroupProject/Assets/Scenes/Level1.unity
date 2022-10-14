@@ -133,6 +133,7 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6085546332817897968, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
   m_PrefabInstance: {fileID: 6085546333418041559}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &638584658
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,11 +456,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334729514}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1371916878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9042921331680401798, guid: 3ee3f9f0c08feef4daeaac79e481b4a5, type: 3}
   m_PrefabInstance: {fileID: 9042921333034914760}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1551005329
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,9 +655,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1726985195 stripped
+=======
+--- !u!1 &2000561900 stripped
+>>>>>>> Stashed changes
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6592711732360496304, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
-  m_PrefabInstance: {fileID: 6197848685616659707}
+  m_CorrespondingSourceObject: {fileID: 2344781420218115836, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
+  m_PrefabInstance: {fileID: 2344781420589903585}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2078564110
 GameObject:
@@ -942,6 +949,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6085546333169068170, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 2000561900}
     - target: {fileID: 6085546333169068171, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1058,7 +1069,7 @@ PrefabInstance:
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 1726985195}
+      objectReference: {fileID: 2719497738004138551, guid: cc8ab34b263875c44be902ded6f00200, type: 3}
     - target: {fileID: 6197848685667658884, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: m_Name
       value: Enemy
