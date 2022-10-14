@@ -38,12 +38,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         GetComponent<Canvas>().enabled = false;
     }
-    //public void Restart()
-    //{
-        //Time.timeScale = 1;
-        //Scene scene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(scene.name);
-    //}
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
     public void MainMenuCheck()
     {
         AreYouSure.GetComponent<Canvas>().enabled = true;

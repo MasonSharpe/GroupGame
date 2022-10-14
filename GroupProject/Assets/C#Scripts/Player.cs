@@ -19,10 +19,11 @@ public class Player : MonoBehaviour
     bool inDash = false;
     Vector3 mouseTarget;
     public int health = 10;
+    public GameObject gameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
-        weapon.GetComponent<SpriteRenderer>().enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -72,23 +73,18 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true) // HIDES WEAPON AFTER TIME
-        {
-            weapon.GetComponent<SpriteRenderer>().enabled = false;
-            weapon.transform.localPosition = Vector3.zero;
-        }
         if (timerStartup <= 0) // ATTACK SENDOUT
         {
             timerStartup = float.PositiveInfinity;
-            weapon.GetComponent<SpriteRenderer>().enabled = true;
-            weapon.transform.localPosition = Vector3.zero;
+            GameObject weaponSpawn = Instantiate(weapon, transform.position, Quaternion.identity);
             timerReload = swingDuration;
             Vector3 mousePosition = mouseTarget;
-            Vector2 diff = mousePosition - weapon.transform.position;
+            Vector2 diff = mousePosition - weaponSpawn.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            weapon.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-            weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+            weaponSpawn.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+            weaponSpawn.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+            Destroy(weaponSpawn, timerReload);
         }
     }
 
@@ -98,6 +94,7 @@ public class Player : MonoBehaviour
         {
             health--;
             timerInvincibility = 1;
+            checkHealth();
         }
     }
 
@@ -107,7 +104,15 @@ public class Player : MonoBehaviour
         {
             health--;
             timerInvincibility = 0.5f;
-            collision.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(collision.gameObject);
+            checkHealth();
+        }
+    }
+    private void checkHealth()
+    {
+        if (health <= 0)
+        {
+            gameOverScreen.GetComponent<Canvas>().enabled = true;
         }
     }
 }

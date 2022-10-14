@@ -34,14 +34,14 @@ public class Enemy : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             playerDir = Vector3.zero;
             timerStartup = 1;
-            weapon.GetComponent<SpriteRenderer>().enabled = true;
-            weapon.transform.localPosition = Vector3.zero;
+            GameObject weaponSpawn = Instantiate(weapon, transform.position, Quaternion.identity);
             timerReload = swingDuration;
-            Vector2 diff = player.transform.position - weapon.transform.position;
+            Vector2 diff = player.transform.position - weaponSpawn.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            weapon.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-            weapon.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+            weaponSpawn.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+            weaponSpawn.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+            Destroy(weaponSpawn, timerReload);
 
         }
         else
@@ -50,11 +50,6 @@ public class Enemy : MonoBehaviour
         }
         timerReload -= Time.deltaTime;
         timerStartup -= Time.deltaTime;
-        if (timerReload <= 0 && weapon.GetComponent<SpriteRenderer>().enabled == true)
-        {
-            weapon.GetComponent<SpriteRenderer>().enabled = false;
-            weapon.transform.localPosition = Vector3.zero;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,7 +58,7 @@ public class Enemy : MonoBehaviour
         {
             health -= Player.damage;
             timerInvincibility = 0.5f;
-            collision.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(collision.gameObject);
         }
     }
 }
