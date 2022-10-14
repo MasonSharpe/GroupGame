@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public static float swingDuration = 0.2f;
     bool inDash = false;
     Vector3 mouseTarget;
-    public int health = 10;
+    public static int health = 10;
     // Start is called before the first frame update
     void Start()
     {
