@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject AreYouSure;
     private void Start()
     {
         GetComponent<Canvas>().enabled = false;
@@ -43,19 +44,19 @@ public class PauseMenu : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
-    //public void MainMenuCheck()
-    //{
-        //AreYouSure.GetComponent<Canvas>().enabled = true;
-        //Time.timeScale = 0;
-    //}
-    //public void Close()
-    //{
-        //Time.timeScale = 0;
-        //GetComponent<Canvas>().enabled = true;
-    //}
+    public void MainMenuCheck()
+    {
+        AreYouSure.GetComponent<Canvas>().enabled = true;
+        Time.timeScale = 0;
+    }
+    public void Close()
+    {
+        Time.timeScale = 0;
+        AreYouSure.GetComponent<Canvas>().enabled = false;
+    }
     //public void Controls()
     //{
-        //SceneManager.LoadScene("Controls");
-        //Time.timeScale = 0;
+    //SceneManager.LoadScene("Controls");
+    //Time.timeScale = 0;
     //}
 }
