@@ -108,9 +108,9 @@ public class Player : MonoBehaviour
     {
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Enemy")
         {
-            health--;
-            timerInvincibility = 1;
-            checkHealth();
+            //health--;
+            //timerInvincibility = 1;   mechanic kinda sucks with the dash, might add in later
+            //checkHealth();
         }
     }
 

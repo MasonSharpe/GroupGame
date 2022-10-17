@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         Vector3 playerDir = player.transform.position - transform.position;
         float playerDist = playerDir.magnitude;
         playerDir.Normalize();
-        if (timerStartup <= 0) //playerDist <= close
+        if (timerStartup <= 0 && playerDist <= close)
         {
             timerTell -= Time.deltaTime;
             timerTracker -= Time.deltaTime;
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
             ppos = Vector3.zero;
             Destroy(weaponSpawn, timerReload);
         }
-        else if (timerStartup >= 0)
+        else if (timerStartup >= 0 || playerDist >= close)
         {
             GetComponent<Rigidbody2D>().velocity = playerDir * speed;
         }
