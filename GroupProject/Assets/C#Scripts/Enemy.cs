@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (timerInvincibility <= 0)
+        if (timerInvincibility <= 0 && collision.gameObject.tag == "Player")
         {
             health -= Player.damage;
             timerInvincibility = 0.5f;
