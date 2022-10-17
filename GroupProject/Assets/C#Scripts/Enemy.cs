@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public int health = 10;
     float timerInvincibility = -1;
     public int damage;
+    public GameObject dCollidor;
     // Start is called before the first frame update
     void Start()
     {
