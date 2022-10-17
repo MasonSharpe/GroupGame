@@ -335,6 +335,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6085546333169068170, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 198622227}
+    - target: {fileID: 6085546333169068170, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 7075981030204060538}
