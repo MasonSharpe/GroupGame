@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (timerInvincibility <= 0)
+        if (timerInvincibility <= 0 && collision.gameObject.tag == "Enemy")
         {
             health--;
             timerInvincibility = 1;
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (timerInvincibility <= 0 && collision.tag == "Enemy")
+        if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
             health--;
             timerInvincibility = 0.5f;
