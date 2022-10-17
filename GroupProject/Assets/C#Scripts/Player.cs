@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision) //COLLIDE WITH ENEMY
     {
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Enemy")
         {
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //COLLIDE WITH BULLET
     {
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
             checkHealth();
         }
     }
-    private void checkHealth()
+    private void checkHealth() //ON DAMAGE TAKEN
     {
         if (health <= 0)
         {

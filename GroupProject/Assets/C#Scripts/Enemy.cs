@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         {
             health -= Player.damage;
             timerInvincibility = 0.5f;
-           // Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
