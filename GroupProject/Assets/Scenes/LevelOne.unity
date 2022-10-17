@@ -1201,7 +1201,6 @@ GameObject:
   - component: {fileID: 2094343834}
   - component: {fileID: 2094343833}
   - component: {fileID: 2094343832}
-  - component: {fileID: 2094343831}
   m_Layer: 5
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -1209,23 +1208,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2094343831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094343830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d404339592df8d4699d2fd68d4dc407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 198622227}
-  speed: 10
-  weapon: {fileID: 0}
-  health: 10
-  gameOverScreen: {fileID: 0}
 --- !u!114 &2094343832
 MonoBehaviour:
   m_ObjectHideFlags: 0

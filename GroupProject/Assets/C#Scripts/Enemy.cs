@@ -54,11 +54,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (timerInvincibility <= 0 && collision.gameObject.tag == "Player")
+        if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
             health -= Player.damage;
             timerInvincibility = 0.5f;
-            Destroy(collision.gameObject);
+           // Destroy(collision.gameObject);
         }
     }
 }
