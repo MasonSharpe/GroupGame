@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         Vector3 playerDir = player.transform.position - transform.position;
         float playerDist = playerDir.magnitude;
         playerDir.Normalize();
-        if (timerStartup <= 0)
+        if (timerStartup <= 0) //playerDist <= close
         {
             timerTell -= Time.deltaTime;
             timerTracker -= Time.deltaTime;
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
                 ppos = player.transform.position;
             }
         }
-        if (playerDist <= close && timerTell <= 0)
+        if (timerTell <= 0)
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             playerDir = Vector3.zero;
