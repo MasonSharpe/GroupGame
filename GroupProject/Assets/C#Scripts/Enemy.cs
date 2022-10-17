@@ -10,13 +10,18 @@ public class Enemy : MonoBehaviour
     float timerStartup = 1;
     public GameObject weapon;
     float timerReload = -1;
+    float timerTell = 1;
+    float swingTell = 0.4f;
+    float timerTracker = 1;
     public float swingStartup = 0.5f;
     public int swingSpeed = 30;
     public float swingDuration = 0.2f;
+    public float swingTracker = 0.3f;
     public int health = 10;
     float timerInvincibility = -1;
     public int damage;
     public GameObject dCollidor;
+    Vector3 ppos = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,24 +35,39 @@ public class Enemy : MonoBehaviour
         Vector3 playerDir = player.transform.position - transform.position;
         float playerDist = playerDir.magnitude;
         playerDir.Normalize();
-        if (playerDist <= close && timerStartup <= 0)
+        if (timerStartup <= 0)
+        {
+            timerTell -= Time.deltaTime;
+            timerTracker -= Time.deltaTime;
+            if (timerTracker <= 0 && ppos == Vector3.zero)
+            {
+                ppos = player.transform.position;
+            }
+        }
+        if (playerDist <= close && timerTell <= 0)
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             playerDir = Vector3.zero;
             timerStartup = 1;
             GameObject weaponSpawn = Instantiate(weapon, transform.position, Quaternion.identity);
             timerReload = swingDuration;
-            Vector2 diff = player.transform.position - weaponSpawn.transform.position;
+            timerTell = swingTell;
+            timerTracker = swingTracker;
+            Vector2 diff = ppos - weaponSpawn.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             weaponSpawn.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
             weaponSpawn.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+            ppos = Vector3.zero;
             Destroy(weaponSpawn, timerReload);
-
+        }
+        else if (timerStartup >= 0)
+        {
+            GetComponent<Rigidbody2D>().velocity = playerDir * speed;
         }
         else
         {
-            GetComponent<Rigidbody2D>().velocity = playerDir * speed;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         timerReload -= Time.deltaTime;
         timerStartup -= Time.deltaTime;
