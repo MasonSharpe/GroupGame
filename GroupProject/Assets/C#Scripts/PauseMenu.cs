@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject AreYouSure;
     private void Start()
     {
         GetComponent<Canvas>().enabled = false;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && AreYouSure.GetComponent<Canvas>().enabled == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && GetComponent<Canvas>().enabled == false)
 
         {
             if (Time.timeScale != 0)
