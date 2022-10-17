@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 10f;
+    public TextMeshProUGUI healthText;
+	public float speed = 10f;
     public GameObject weapon;
     float timerReload = -1;
     float timerStartup = float.PositiveInfinity;
@@ -29,7 +32,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerReload -= Time.deltaTime; // TIMERS
+		healthText.text = "Health: " + health;
+		timerReload -= Time.deltaTime; // TIMERS
         timerStartup -= Time.deltaTime;
         timerPreDash -= Time.deltaTime;
         timerInvincibility -= Time.deltaTime;
