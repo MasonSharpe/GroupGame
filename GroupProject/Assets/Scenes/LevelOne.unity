@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6085546333169068175, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
 --- !u!1 &406258941
@@ -843,6 +847,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6197848685667658884, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
+      propertyPath: m_TagString
+      value: Damage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
 --- !u!1 &1712224540
@@ -1234,6 +1242,14 @@ PrefabInstance:
     - target: {fileID: 7546150902066043689, guid: f95076e40f2805d4c82a2ecdaae45cf1, type: 3}
       propertyPath: m_Name
       value: GameOverScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546150902066043689, guid: f95076e40f2805d4c82a2ecdaae45cf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546150902066043693, guid: f95076e40f2805d4c82a2ecdaae45cf1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95076e40f2805d4c82a2ecdaae45cf1, type: 3}
