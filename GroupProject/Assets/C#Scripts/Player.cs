@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     Vector3 mouseTarget;
     public int health = 10;
     public GameObject gameOverScreen;
+    public float stamina = 0;
+    float max_stamina = 100;
+    public TextMeshProUGUI stamText;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		healthText.text = "Health: " + health;
+        stamina += Time.deltaTime * 10; // NATURAL STAMINA GAIN
+        if (stamina >= max_stamina)
+        {
+            stamina = max_stamina;
+        }
+        stamText.text = "Stamina: " + Mathf.Round(stamina);
+        healthText.text = "Health: " + health;
 		timerReload -= Time.deltaTime; // TIMERS
         timerStartup -= Time.deltaTime;
         timerPreDash -= Time.deltaTime;
@@ -45,17 +54,20 @@ public class Player : MonoBehaviour
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
             timerDash = 0.1f;
+            stamina -= timerDash * 100;
+            timerInvincibility = timerDash;
             GetComponent<Rigidbody2D>().velocity = dashCurSpeed;
             if (Mathf.Abs(dashCurSpeed.x) + Mathf.Abs(dashCurSpeed.y) == 2)
             {
                 GetComponent<Rigidbody2D>().velocity /= 2;
             }
         }
-        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash && timerStartup > 100) // ATTACK INITILIZATION
+        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash && timerStartup > 100 && stamina >= swingStartup * 50) // ATTACK INITILIZATION
         {
             timerStartup = swingStartup;
             mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GetComponent<Rigidbody2D>().velocity = moveDirection;
+            stamina -= swingStartup * 50;
         }
         if (timerStartup > 100 && !inDash) // BASIC MOVEMENT
         {
@@ -117,6 +129,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             gameOverScreen.GetComponent<Canvas>().enabled = true;
+            Time.timeScale = 0;
         }
     }
 }

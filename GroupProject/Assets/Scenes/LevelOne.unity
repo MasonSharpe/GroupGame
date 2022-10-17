@@ -212,6 +212,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6085546333169068170, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
+      propertyPath: stamText
+      value: 
+      objectReference: {fileID: 3446276391123555973}
+    - target: {fileID: 6085546333169068170, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 198622227}
@@ -277,11 +281,6 @@ PrefabInstance:
 Camera:
   m_CorrespondingSourceObject: {fileID: 6085546332817897968, guid: 0867eb8d45f97f14f8ba2ec506d4eabe, type: 3}
   m_PrefabInstance: {fileID: 245766074}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1288056823 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2344781420218115836, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
-  m_PrefabInstance: {fileID: 1824333941}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1385902043
 GameObject:
@@ -851,11 +850,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2973706619499860520, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 1938672397}
+    - target: {fileID: 2973706619499860520, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
       propertyPath: AreYouSure
       value: 
-      objectReference: {fileID: 1288056823}
+      objectReference: {fileID: 1862042761}
+    - target: {fileID: 3677970921056541901, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
+--- !u!1 &1862042761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2752334748300109225, guid: 089c15704189e9a49b6eba23452856d4, type: 3}
+  m_PrefabInstance: {fileID: 1824333941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1938672397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7546150902066043689, guid: f95076e40f2805d4c82a2ecdaae45cf1, type: 3}
@@ -880,6 +892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1486614403133629535, guid: 120c9deee480eba4789b8ed2fa8f6e4f, type: 3}
+      propertyPath: m_margin.z
+      value: -155.63007
+      objectReference: {fileID: 0}
     - target: {fileID: 3446276390245707794, guid: 120c9deee480eba4789b8ed2fa8f6e4f, type: 3}
       propertyPath: m_Name
       value: HealthCanvas
@@ -968,8 +984,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3446276390967224977, guid: 120c9deee480eba4789b8ed2fa8f6e4f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -353.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446276390967224977, guid: 120c9deee480eba4789b8ed2fa8f6e4f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -166.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120c9deee480eba4789b8ed2fa8f6e4f, type: 3}
+--- !u!114 &3446276391123555973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1486614403133629535, guid: 120c9deee480eba4789b8ed2fa8f6e4f, type: 3}
+  m_PrefabInstance: {fileID: 3446276391123555972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6405567967433232443
 PrefabInstance:
   m_ObjectHideFlags: 0
