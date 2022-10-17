@@ -43,11 +43,11 @@ public class PauseMenu : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
-    public void MainMenuCheck()
-    {
-        AreYouSure.GetComponent<Canvas>().enabled = true;
-        Time.timeScale = 0;
-    }
+    //public void MainMenuCheck()
+    //{
+        //AreYouSure.GetComponent<Canvas>().enabled = true;
+        //Time.timeScale = 0;
+    //}
     //public void Close()
     //{
         //Time.timeScale = 0;
