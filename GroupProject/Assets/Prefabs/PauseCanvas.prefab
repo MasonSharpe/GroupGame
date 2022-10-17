@@ -821,7 +821,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2752334748300109225}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7948242991833651593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2973706619499860520}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: MainMenuCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
