@@ -9,6 +9,9 @@ public class Pickup : MonoBehaviour
     public float swingStartup = 0.5f;
     public float swingDuration = 0.5f;
     public int swingSpeed = 15;
+    public Vector2 swingSize = new Vector2(1.2f, 0.3f);
+    public Sprite swingSprite;
+    public Sprite groundSprite;
     void Start()
     {
         

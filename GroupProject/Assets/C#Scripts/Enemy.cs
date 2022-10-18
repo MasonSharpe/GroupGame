@@ -12,16 +12,17 @@ public class Enemy : MonoBehaviour
     float timerReload = -1;
     float timerTell = 1;
     float swingTell = 0.4f;
-    float timerTracker = 1;
+    float timerAccuracy = 1;
     public float swingStartup = 0.5f;
     public int swingSpeed = 30;
     public float swingDuration = 0.2f;
-    public float swingTracker = 0.3f;
+    public float swingAccuracy = 0.3f;
     public int health = 10;
     float timerInvincibility = -1;
     public int damage;
     public GameObject dCollidor;
     Vector3 ppos = Vector3.zero;
+    bool unnoticed = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +36,15 @@ public class Enemy : MonoBehaviour
         Vector3 playerDir = player.transform.position - transform.position;
         float playerDist = playerDir.magnitude;
         playerDir.Normalize();
+        if (unnoticed && playerDist <= close * 2)
+        {
+            unnoticed = false;
+        }
         if (timerStartup <= 0 && playerDist <= close)
         {
             timerTell -= Time.deltaTime;
-            timerTracker -= Time.deltaTime;
-            if (timerTracker <= 0 && ppos == Vector3.zero)
+            timerAccuracy -= Time.deltaTime;
+            if (timerAccuracy <= 0 && ppos == Vector3.zero)
             {
                 ppos = player.transform.position;
             }
@@ -52,7 +57,7 @@ public class Enemy : MonoBehaviour
             GameObject weaponSpawn = Instantiate(weapon, transform.position, Quaternion.identity);
             timerReload = swingDuration;
             timerTell = swingTell;
-            timerTracker = swingTracker;
+            timerAccuracy = swingAccuracy;
             Vector2 diff = ppos - weaponSpawn.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -61,7 +66,7 @@ public class Enemy : MonoBehaviour
             ppos = Vector3.zero;
             Destroy(weaponSpawn, timerReload);
         }
-        else if (timerStartup >= 0 || playerDist >= close)
+        else if ((timerStartup >= 0 || playerDist >= close) && !unnoticed)
         {
             GetComponent<Rigidbody2D>().velocity = playerDir * speed;
         }
@@ -80,6 +85,11 @@ public class Enemy : MonoBehaviour
             health -= Player.damage;
             timerInvincibility = 0.5f;
             Destroy(collision.gameObject);
+            if (health <= 0)
+            {
+                Player.enemiesLeft--;
+                Destroy(gameObject);
+            }
         }
     }
 }

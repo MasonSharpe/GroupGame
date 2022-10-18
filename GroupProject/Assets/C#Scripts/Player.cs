@@ -9,17 +9,25 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI healthText;
 	public float speed = 10f;
     public GameObject weapon;
-    float timerReload = -1;
+    Vector2 dashCurSpeed;
+    public static int enemiesLeft;
+
+    float timerReload = -1; //TIMERS
     float timerStartup = float.PositiveInfinity;
     float timerDash = -1;
     float timerPreDash = -1;
     float timerInvincibility = -1;
-    Vector2 dashCurSpeed;
+    
+    
     public static int damage = 50;
-    public static float swingStartup = 0.5f;
+    public static Vector2 swingSize = new Vector2(1.2f, 0.3f);
+    public static Sprite swingSprite;
+    public static float swingStartup = 0.5f; //CHANGABLE STATS
     public static int swingSpeed = 30;
     public static float swingDuration = 0.2f;
+    
     bool inDash = false;
+    public Sprite defaultSprite;
     Vector3 mouseTarget;
     public int health = 10;
     public GameObject gameOverScreen;
@@ -35,11 +43,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stamina += Time.deltaTime * 10; // NATURAL STAMINA GAIN
-        if (stamina >= max_stamina)
-        {
-            stamina = max_stamina;
-        }
         stamText.text = "Stamina: " + Mathf.Round(stamina);
         healthText.text = "Health: " + health;
 		timerReload -= Time.deltaTime; // TIMERS
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
         }
         if (timerStartup > 100 && !inDash) // BASIC MOVEMENT
         {
+            stamina += Time.deltaTime * 20;
             GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
             GetComponent<Animator>().SetFloat("xInput", moveDirection.x);
             GetComponent<Animator>().SetFloat("yInput", moveDirection.y);
@@ -101,6 +105,10 @@ public class Player : MonoBehaviour
             weaponSpawn.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
             weaponSpawn.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
             Destroy(weaponSpawn, timerReload);
+        }
+        if (stamina >= max_stamina)
+        {
+            stamina = max_stamina;
         }
     }
 
