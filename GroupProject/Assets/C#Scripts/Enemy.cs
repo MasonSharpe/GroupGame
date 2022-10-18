@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
             playerDir = Vector3.zero;
             timerStartup = 1;
             GameObject weaponSpawn = Instantiate(weapon, transform.position, Quaternion.identity);
+            weaponSpawn.GetComponent<Projectiles>().damage = damage;
             timerReload = swingDuration;
             timerTell = swingTell;
             timerAccuracy = swingAccuracy;

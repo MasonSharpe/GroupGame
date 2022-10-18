@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
     {
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
-            health--;
+            health -= collision.GetComponent<Projectiles>().damage;
             timerInvincibility = 0.5f;
             Destroy(collision.gameObject);
             checkHealth();
