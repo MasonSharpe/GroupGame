@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
-        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0 && stamina >= timerDash * 100) //DASH INITILIZATION
+        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0 && stamina >= 10) //DASH INITILIZATION
         {
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
