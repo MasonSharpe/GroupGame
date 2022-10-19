@@ -430,16 +430,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 306222491}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
+      propertyPath: swingTell
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingSpeed
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingStartup
-      value: 0.4
+      value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingAccuracy
-      value: 0.4
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingDuration
@@ -63790,6 +63794,10 @@ PrefabInstance:
       propertyPath: dCollidor
       value: 
       objectReference: {fileID: 1686469598}
+    - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
+      propertyPath: swingAccuracy
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658884, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -63968,7 +63976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingAccuracy
-      value: 0.2
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingDuration

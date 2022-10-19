@@ -11,9 +11,8 @@ public class Enemy : MonoBehaviour
     public GameObject weapon;
     float timerReload = -1;
     float timerTell = 1;
-    float swingTell = 0.4f;
+    public float swingTell = 0.4f;
     float timerAccuracy = 1;
-    public float swingStartup = 0.5f;
     public int swingSpeed = 30;
     public float swingDuration = 0.2f;
     public float swingAccuracy = 0.3f;
@@ -65,7 +64,7 @@ public class Enemy : MonoBehaviour
             weaponSpawn.GetComponent<Projectiles>().damage = damage;
             timerReload = swingDuration;
             timerTell = swingTell;
-            timerAccuracy = swingAccuracy;
+            timerAccuracy = swingTell * (swingAccuracy / 100);
             Vector2 diff = ppos - weaponSpawn.transform.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -91,7 +90,7 @@ public class Enemy : MonoBehaviour
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
             health -= Player.damage;
-            timerInvincibility = 0.5f;
+            timerInvincibility = 0.1f;
             Destroy(collision.gameObject);
             if (health <= 0)
             {
