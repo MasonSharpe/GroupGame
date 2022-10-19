@@ -28,28 +28,32 @@ public class Pickup : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            int tempDamage = Player.damage;
-            float tempSStartup = Player.swingStartup;
-            float tempSDuration = Player.swingDuration;
-            int tempSSpeed = Player.swingSpeed;
             if (isAdditive)
             {
                 Player.damage += damage;
                 Player.swingDuration += swingDuration;
                 Player.swingSpeed += swingSpeed;
                 Player.swingStartup -= swingStartup;
+                damage = Player.damage;
+                swingStartup = Player.swingStartup;
+                swingDuration = Player.swingDuration;
+                swingSpeed = Player.swingSpeed;
             }
             else
             {
+                int tempDamage = Player.damage;
+                float tempSStartup = Player.swingStartup;
+                float tempSDuration = Player.swingDuration;
+                int tempSSpeed = Player.swingSpeed;
                 Player.damage = damage;
                 Player.swingDuration = swingDuration;
                 Player.swingSpeed = swingSpeed;
                 Player.swingStartup = swingStartup;
+                damage = tempDamage;
+                swingStartup = tempSStartup;
+                swingDuration = tempSDuration;
+                swingSpeed = tempSSpeed;
             }
-            damage = tempDamage;
-            swingStartup = tempSStartup;
-            swingDuration = tempSDuration;
-            swingSpeed = tempSSpeed;
             if (isAdditive)
             {
                 Destroy(gameObject);
