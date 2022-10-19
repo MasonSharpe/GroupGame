@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour
     public Vector2 swingSize = new Vector2(1.2f, 0.3f);
     public Sprite swingSprite;
     public Sprite groundSprite;
+    public bool isAdditive = false;
     void Start()
     {
         
@@ -25,17 +26,34 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        int tempDamage = Player.damage;
-        float tempSStartup = Player.swingStartup;
-        float tempSDuration = Player.swingDuration;
-        int tempSSpeed = Player.swingSpeed;
-        Player.damage = damage;
-        Player.swingDuration = swingDuration;
-        Player.swingSpeed = swingSpeed;
-        Player.swingStartup = swingStartup;
-        damage = tempDamage;
-        swingStartup = tempSStartup;
-        swingDuration = tempSDuration;
-        swingSpeed = tempSSpeed;
+        if (collision.gameObject.tag == "Player")
+        {
+            int tempDamage = Player.damage;
+            float tempSStartup = Player.swingStartup;
+            float tempSDuration = Player.swingDuration;
+            int tempSSpeed = Player.swingSpeed;
+            if (isAdditive)
+            {
+                Player.damage += damage;
+                Player.swingDuration += swingDuration;
+                Player.swingSpeed += swingSpeed;
+                Player.swingStartup -= swingStartup;
+            }
+            else
+            {
+                Player.damage = damage;
+                Player.swingDuration = swingDuration;
+                Player.swingSpeed = swingSpeed;
+                Player.swingStartup = swingStartup;
+            }
+            damage = tempDamage;
+            swingStartup = tempSStartup;
+            swingDuration = tempSDuration;
+            swingSpeed = tempSSpeed;
+            if (isAdditive)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

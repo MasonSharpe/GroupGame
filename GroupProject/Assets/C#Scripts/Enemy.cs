@@ -40,11 +40,18 @@ public class Enemy : MonoBehaviour
         {
             unnoticed = false;
         }
-        if (timerStartup <= 0 && playerDist <= close)
+        if (timerStartup <= 0)
         {
-            timerTell -= Time.deltaTime;
-            timerAccuracy -= Time.deltaTime;
-            if (timerAccuracy <= 0 && ppos == Vector3.zero)
+            if (playerDist <= close)
+            {
+                timerTell -= Time.deltaTime;
+                timerAccuracy -= Time.deltaTime;
+                if (timerAccuracy <= 0 && ppos == Vector3.zero)
+                {
+                    ppos = player.transform.position;
+                }
+            }
+            else
             {
                 ppos = player.transform.position;
             }

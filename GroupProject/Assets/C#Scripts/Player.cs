@@ -7,7 +7,12 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
-	public float speed = 10f;
+    public TextMeshProUGUI stamText;
+    public TextMeshProUGUI damText;
+    public TextMeshProUGUI weightText;
+    public TextMeshProUGUI rangeText;
+    public TextMeshProUGUI speedText;
+    public float speed = 10f;
     public GameObject weapon;
     Vector2 dashCurSpeed;
     public static int enemiesLeft;
@@ -29,26 +34,32 @@ public class Player : MonoBehaviour
     bool inDash = false;
     public Sprite defaultSprite;
     Vector3 mouseTarget;
-    public int health = 10;
+    public static int health = 10;
+    public static int maxHealth = 10;
     public GameObject gameOverScreen;
-    public float stamina = 0;
-    float max_stamina = 100;
-    public TextMeshProUGUI stamText;
+    public static float stamina = 0;
+    public static float maxStamina = 100;
+    public static bool takenDamage = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
         stamText.text = "Stamina: " + Mathf.Round(stamina);
+        damText.text = "Damage: " + damage;
+        weightText.text = "Weight: " + swingStartup;
+        rangeText.text = "Range: " + Mathf.Round(swingDuration * swingSpeed);
+        speedText.text = "Speed: " + swingSpeed;
         healthText.text = "Health: " + health;
-		timerReload -= Time.deltaTime; // TIMERS
+        timerReload -= Time.deltaTime; // TIMERS
         timerStartup -= Time.deltaTime;
         timerPreDash -= Time.deltaTime;
         timerInvincibility -= Time.deltaTime;
+        timerDash -= Time.deltaTime;
         float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
@@ -74,14 +85,16 @@ public class Player : MonoBehaviour
         }
         if (timerStartup > 100 && !inDash) // BASIC MOVEMENT
         {
-            stamina += Time.deltaTime * 20;
+            if (timerDash < -3)
+            {
+                stamina += Time.deltaTime * 20;
+            }
             GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
             GetComponent<Animator>().SetFloat("xInput", moveDirection.x);
             GetComponent<Animator>().SetFloat("yInput", moveDirection.y);
         }
         if (inDash) // DASH COUNTDOWN/ENDING
         {
-            timerDash -= Time.deltaTime;
             if (timerDash <= 0)
             {
                 dashCurSpeed *= 0.9f;
@@ -106,9 +119,9 @@ public class Player : MonoBehaviour
             weaponSpawn.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
             Destroy(weaponSpawn, timerReload);
         }
-        if (stamina >= max_stamina)
+        if (stamina >= maxStamina)
         {
-            stamina = max_stamina;
+            stamina = maxStamina;
         }
     }
 
@@ -127,6 +140,7 @@ public class Player : MonoBehaviour
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
             health -= collision.GetComponent<Projectiles>().damage;
+            takenDamage = true;
             timerInvincibility = 0.5f;
             Destroy(collision.gameObject);
             checkHealth();

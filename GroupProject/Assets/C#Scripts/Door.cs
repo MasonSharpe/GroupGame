@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public int enemiesInRoom = 1;
+    public bool isBoss = false;
     //public GameObject activationBox;
     bool activeRoom = false;
     // Start is called before the first frame update
@@ -19,6 +20,18 @@ public class Door : MonoBehaviour
     {
         if (Player.enemiesLeft <= 0 && activeRoom)
         {
+            if (!Player.takenDamage)
+            {
+                if (isBoss)
+                {
+                    Player.maxHealth += 25;
+                    Player.health = Player.maxHealth;
+                }
+                else
+                {
+                    Player.maxStamina += 1;
+                }
+            }
             Destroy(gameObject);
         }
     }
@@ -29,6 +42,7 @@ public class Door : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
             Player.enemiesLeft = enemiesInRoom;
+            Player.takenDamage = false;
             activeRoom = true;
         }
     }
