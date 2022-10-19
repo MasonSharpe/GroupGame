@@ -102,13 +102,13 @@ MonoBehaviour:
   speed: 2
   close: 5
   weapon: {fileID: 2719497738004138551, guid: cc8ab34b263875c44be902ded6f00200, type: 3}
-  swingStartup: 0.5
+  swingTell: 0.4
   swingSpeed: 30
   swingDuration: 0.2
   swingAccuracy: 0.3
   health: 10
   damage: 0
-  dCollidor: {fileID: 0}
+  dCollidor: {fileID: 8736426700485153551}
 --- !u!50 &6197848685667658879
 Rigidbody2D:
   serializedVersion: 4

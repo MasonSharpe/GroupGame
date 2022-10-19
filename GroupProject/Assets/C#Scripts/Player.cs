@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     public static int health = 10;
     public static int maxHealth = 10;
     public GameObject gameOverScreen;
-    public static float stamina = 0;
+    public static float stamina = 100;
     public static float maxStamina = 100;
     public static bool takenDamage = false;
     // Start is called before the first frame update
@@ -63,6 +63,14 @@ public class Player : MonoBehaviour
         float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
+        if (timerInvincibility > 0)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.6f);
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        }
         if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0 && stamina >= timerDash * 100) //DASH INITILIZATION
         {
             dashCurSpeed = moveDirection * speed * 3;
