@@ -8,10 +8,8 @@ public class Player : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI stamText;
-    public TextMeshProUGUI damText;
-    public TextMeshProUGUI weightText;
-    public TextMeshProUGUI rangeText;
-    public TextMeshProUGUI speedText;
+    public GameObject healthBar;
+    public GameObject stamBar;
     public float speed = 10f;
     public GameObject weapon;
     Vector2 dashCurSpeed;
@@ -34,8 +32,8 @@ public class Player : MonoBehaviour
     bool inDash = false;
     public Sprite defaultSprite;
     Vector3 mouseTarget;
-    public static int health = 10;
-    public static int maxHealth = 10;
+    public static float health = 10;
+    public static float maxHealth = 10;
     public GameObject gameOverScreen;
     public static float stamina = 100;
     public static float maxStamina = 100;
@@ -44,17 +42,17 @@ public class Player : MonoBehaviour
     void Start()
     {
         health = 10;
+        stamina = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        stamText.text = "Stamina: " + Mathf.Round(stamina);
-        damText.text = "Damage: " + damage;
-        weightText.text = "Weight: " + swingStartup;
-        rangeText.text = "Range: " + Mathf.Round(swingDuration * swingSpeed);
-        speedText.text = "Speed: " + swingSpeed;
-        healthText.text = "Health: " + health;
+        stamText.text = Mathf.Round(stamina).ToString();
+        healthText.text = health.ToString();
+        //healthBar.GetComponent<RectTransform>().rect.Set(0, 0, 189f * (h / a), 11.51f);
+        healthBar.GetComponent<RectTransform>().localScale = new Vector2(health / maxHealth, 1);
+        stamBar.GetComponent<RectTransform>().localScale = new Vector2(stamina / maxStamina, 1);
         timerReload -= Time.deltaTime; // TIMERS
         timerStartup -= Time.deltaTime;
         timerPreDash -= Time.deltaTime;

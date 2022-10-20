@@ -366,7 +366,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2344781420218115836}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreYouSure: {fileID: 2752334748300109225}
+  gameOver: {fileID: 0}
 --- !u!1 &2344781420238934700
 GameObject:
   m_ObjectHideFlags: 0

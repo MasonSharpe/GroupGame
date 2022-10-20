@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Pickup : MonoBehaviour
 {
     public string type = "Sword";
@@ -13,6 +14,14 @@ public class Pickup : MonoBehaviour
     public Sprite swingSprite;
     public Sprite groundSprite;
     public bool isAdditive = false;
+    public GameObject player;
+    public GameObject panel;
+
+    public TextMeshProUGUI damText;
+    public TextMeshProUGUI weightText;
+    public TextMeshProUGUI speedText;
+    public TextMeshProUGUI rangeText;
+    public TextMeshProUGUI typeText;
     void Start()
     {
         
@@ -21,7 +30,28 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        damText.text = "Damage: " + damage;
+        weightText.text = "Weight: " + swingStartup;
+        rangeText.text = "Range: " + Mathf.Round(swingDuration * swingSpeed);
+        speedText.text = "Speed: " + swingSpeed;
+        if (!isAdditive)
+        {
+            typeText.text = type;
+        }
+        else
+        {
+            typeText.text = "Upgrade";
+        }
+        Vector3 playerDir = player.transform.position - transform.position;
+        float playerDist = playerDir.magnitude;
+        if (playerDist <= 3)
+        {
+            panel.GetComponent<Canvas>().enabled = true;
+        }
+        else
+        {
+            panel.GetComponent<Canvas>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
