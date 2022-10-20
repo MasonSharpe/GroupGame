@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     float timerStartup = 1;
     public GameObject weapon;
     float timerReload = -1;
-    float timerTell = 1;
+    float timerTell;
     public float swingTell = 0.4f;
     float timerAccuracy = 1;
     public int swingSpeed = 30;

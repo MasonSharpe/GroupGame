@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
-        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0 && stamina >= 10) //DASH INITILIZATION
+        if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0 && stamina >= 10 && !inDash) //DASH INITILIZATION
         {
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         }
         if (timerStartup > 100 && !inDash) // BASIC MOVEMENT
         {
-            if (timerDash < -3)
+            if (timerDash < -2)
             {
                 stamina += Time.deltaTime * 20;
             }
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
                 {
                     dashCurSpeed = Vector2.zero;
                     inDash = false;
-                    timerPreDash = 1;
+                    timerPreDash = 0.5f;
                 }
             }
         }
@@ -131,15 +131,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision) //COLLIDE WITH ENEMY
-    {
-        if (timerInvincibility <= 0 && collision.gameObject.tag == "Enemy")
-        {
+    //private void OnCollisionStay2D(Collision2D collision) //COLLIDE WITH ENEMY
+    //{
+        //if (timerInvincibility <= 0 && collision.gameObject.tag == "Enemy")
+        //{
             //health--;
             //timerInvincibility = 1;   mechanic kinda sucks with the dash, might add in later
             //checkHealth();
-        }
-    }
+       // }
+   // }
 
     private void OnTriggerEnter2D(Collider2D collision) //COLLIDE WITH BULLET
     {
@@ -149,6 +149,17 @@ public class Player : MonoBehaviour
             takenDamage = true;
             timerInvincibility = 0.5f;
             Destroy(collision.gameObject);
+            checkHealth();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (timerInvincibility <= 0 && collision.gameObject.tag == "SpikeDamage")
+        {
+            health -= 3;
+            takenDamage = true;
+            timerInvincibility = 0.5f;
             checkHealth();
         }
     }

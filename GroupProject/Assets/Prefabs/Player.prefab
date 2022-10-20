@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2932529939704747033}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,9 +203,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d404339592df8d4699d2fd68d4dc407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  stamText: {fileID: 0}
+  healthBar: {fileID: 0}
+  stamBar: {fileID: 0}
   speed: 10
   weapon: {fileID: 6524823416319038313, guid: cb98911327fefaf478330144cf0d94de, type: 3}
-  health: 10
+  defaultSprite: {fileID: 0}
+  gameOverScreen: {fileID: 0}
 --- !u!95 &3081592998998667869
 Animator:
   serializedVersion: 3

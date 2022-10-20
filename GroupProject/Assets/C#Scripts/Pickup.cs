@@ -36,7 +36,7 @@ public class Pickup : MonoBehaviour
         speedText.text = "Speed: " + swingSpeed;
         if (!isAdditive)
         {
-            typeText.text = type;
+            typeText.text = "Weapon";
         }
         else
         {
