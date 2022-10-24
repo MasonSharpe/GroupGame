@@ -608,7 +608,7 @@ MonoBehaviour:
   damage: 30
   swingStartup: 0.5
   swingDuration: 0.5
-  swingSpeed: 0
+  swingSpeed: 5
   swingSize: {x: 1.2, y: 0.3}
   swingSprite: {fileID: 0}
   groundSprite: {fileID: 0}
