@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     float timerStartup = 1;
     public GameObject weapon;
     float timerReload = -1;
-    float timerTell;
+    float timerTell = 1;
     public float swingTell = 0.4f;
     float timerAccuracy = 1;
     public int swingSpeed = 30;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timerTell = swingTell;
     }
 
     // Update is called once per frame
