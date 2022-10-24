@@ -211,6 +211,8 @@ MonoBehaviour:
   weapon: {fileID: 6524823416319038313, guid: cb98911327fefaf478330144cf0d94de, type: 3}
   defaultSprite: {fileID: 0}
   gameOverScreen: {fileID: 0}
+  playerWalk: {fileID: 9100000, guid: eba94b4c08ea5b549bf030f99a3fbc02, type: 2}
+  playerAttack: {fileID: 9100000, guid: 98f2d04a16526f04a81eab15413ab731, type: 2}
 --- !u!95 &3081592998998667869
 Animator:
   serializedVersion: 3
