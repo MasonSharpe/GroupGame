@@ -6,6 +6,7 @@ public class Projectiles : MonoBehaviour
 {
     public int damage;
     public string type = "Player";
+    float lifespan = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,12 @@ public class Projectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        lifespan += Time.deltaTime;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6 && lifespan > 0.05f)
         {
-            print(collision.gameObject.layer);
             Destroy(gameObject);
         }
     }

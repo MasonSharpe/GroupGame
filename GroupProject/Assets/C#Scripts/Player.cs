@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     public static float stamina = 100;
     public static float maxStamina = 100;
     public static bool takenDamage = false;
+
+    public RuntimeAnimatorController playerWalk;
+    public RuntimeAnimatorController playerAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.timeScale != 0 && !inDash && timerStartup > 100 && stamina >= swingStartup * 50) // ATTACK INITILIZATION
         {
             timerStartup = swingStartup;
+            GetComponent<Animator>().runtimeAnimatorController = playerAttack;
             mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GetComponent<Rigidbody2D>().velocity = moveDirection;
             stamina -= swingStartup * 50;
@@ -96,9 +100,9 @@ public class Player : MonoBehaviour
                 stamina += Time.deltaTime * 20;
             }
             GetComponent<Rigidbody2D>().velocity = moveDirection * speed;
-            GetComponent<Animator>().SetFloat("xInput", moveDirection.x);
-            GetComponent<Animator>().SetFloat("yInput", moveDirection.y);
         }
+        GetComponent<Animator>().SetFloat("xInput", moveDirection.x);
+        GetComponent<Animator>().SetFloat("yInput", moveDirection.y);
         if (inDash) // DASH COUNTDOWN/ENDING
         {
             if (timerDash <= 0)
@@ -123,6 +127,7 @@ public class Player : MonoBehaviour
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             weaponSpawn.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
             weaponSpawn.GetComponent<Rigidbody2D>().velocity = (new Vector2(diff.x, diff.y) * swingSpeed);
+            GetComponent<Animator>().runtimeAnimatorController = playerWalk;
             Destroy(weaponSpawn, timerReload);
         }
         if (stamina >= maxStamina)
