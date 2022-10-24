@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activeRoom = false;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
     }
@@ -20,6 +21,10 @@ public class Door : MonoBehaviour
     {
         if (Player.enemiesLeft <= 0 && activeRoom)
         {
+            if (Player.health < Player.maxHealth)
+            {
+                Player.health += 1;
+            }
             if (!Player.takenDamage)
             {
                 if (isBoss)

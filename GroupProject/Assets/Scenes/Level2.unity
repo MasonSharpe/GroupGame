@@ -26806,6 +26806,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1580986328}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingSize.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingStartup
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
 --- !u!1001 &900492243
@@ -27726,6 +27750,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1580986328}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: isAdditive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingStartup
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045152465818671629, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
+      propertyPath: swingDuration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4caba55b3457ed34d8aaf165ba6b1280, type: 3}
 --- !u!1001 &1344339516
@@ -27975,7 +28023,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: damage
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
+      propertyPath: health
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: player
@@ -27983,15 +28035,15 @@ PrefabInstance:
       objectReference: {fileID: 1580986328}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingTell
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingSpeed
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingAccuracy
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6197848685667658875, guid: 6d6e83ce1b7833546bc0523ea98803a2, type: 3}
       propertyPath: swingDuration

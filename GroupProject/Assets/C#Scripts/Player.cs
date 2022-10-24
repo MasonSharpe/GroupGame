@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     float timerInvincibility = -1;
     
     
-    public static int damage = 50;
+    public static int damage = 5;
     public static Vector2 swingSize = new Vector2(1.2f, 0.3f);
     public static Sprite swingSprite;
     public static float swingStartup = 0.5f; //CHANGABLE STATS

@@ -80,6 +80,7 @@ public class Pickup : MonoBehaviour
                 Player.swingDuration = swingDuration;
                 Player.swingSpeed = swingSpeed;
                 Player.swingStartup = swingStartup;
+                Player.swingSize = swingSize;
                 damage = tempDamage;
                 swingStartup = tempSStartup;
                 swingDuration = tempSDuration;
