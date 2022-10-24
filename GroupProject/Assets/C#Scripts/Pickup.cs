@@ -31,16 +31,17 @@ public class Pickup : MonoBehaviour
     void Update()
     {
         damText.text = "Damage: " + damage;
-        weightText.text = "Weight: " + swingStartup;
         rangeText.text = "Range: " + Mathf.Round(swingDuration * swingSpeed);
         speedText.text = "Speed: " + swingSpeed;
         if (!isAdditive)
         {
             typeText.text = "Weapon";
+            weightText.text = "Weight: " + swingStartup;
         }
         else
         {
             typeText.text = "Upgrade";
+            weightText.text = "Weight: " + -swingStartup;
         }
         Vector3 playerDir = player.transform.position - transform.position;
         float playerDist = playerDir.magnitude;
