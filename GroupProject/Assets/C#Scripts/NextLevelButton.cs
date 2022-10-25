@@ -30,6 +30,13 @@ public class NextLevelButton : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene("Level" + (player.GetComponent<Player>().level + 1).ToString());
+        if (SceneManager.GetActiveScene().name == "TutorialLevel")
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level" + (player.GetComponent<Player>().level + 1).ToString());
+        }
     }
 }
