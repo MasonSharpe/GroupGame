@@ -24,7 +24,7 @@ public class Pickup : MonoBehaviour
     public TextMeshProUGUI typeText;
     void Start()
     {
-        
+        GetComponent<SpriteRenderer>().sprite = swingSprite;
     }
 
     // Update is called once per frame
@@ -76,15 +76,19 @@ public class Pickup : MonoBehaviour
                 float tempSStartup = Player.swingStartup;
                 float tempSDuration = Player.swingDuration;
                 int tempSSpeed = Player.swingSpeed;
+                Sprite tempSSprite = Player.swingSprite;
+                Player.swingSprite = swingSprite;
                 Player.damage = damage;
                 Player.swingDuration = swingDuration;
                 Player.swingSpeed = swingSpeed;
                 Player.swingStartup = swingStartup;
                 Player.swingSize = swingSize;
+                swingSprite = tempSSprite;
                 damage = tempDamage;
                 swingStartup = tempSStartup;
                 swingDuration = tempSDuration;
                 swingSpeed = tempSSpeed;
+                GetComponent<SpriteRenderer>().sprite = swingSprite;
             }
             if (isAdditive)
             {

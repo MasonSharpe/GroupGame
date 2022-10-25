@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     {
         health = 10;
         stamina = 100;
+        swingSprite = defaultSprite;
     }
 
     // Update is called once per frame
