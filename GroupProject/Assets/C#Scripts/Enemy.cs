@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour
         else if ((timerStartup >= 0 || playerDist >= close) && !unnoticed)
         {
             GetComponent<Rigidbody2D>().velocity = playerDir * speed;
+            GetComponent<Animator>().SetFloat("xInput", playerDir.x);
         }
         else
         {
