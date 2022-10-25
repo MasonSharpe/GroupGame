@@ -18,7 +18,6 @@ public class MainMenuScreen : MonoBehaviour
     }
     public void StartGame()
     {
-        print("asd");
         Time.timeScale = 1;
         SceneManager.LoadScene("LevelOne");
     }
