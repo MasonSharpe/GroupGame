@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelButton : MonoBehaviour
 {
-    Vector3 mouseTarget;
+    //Vector3 mouseTarget;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,17 +14,22 @@ public class NextLevelButton : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire2"))
-        {
-			mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //void Update()
+    //{
+       // if (Input.GetButtonDown("Fire2"))
+       // {
+			//mouseTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-		}
-	}
-	public void SelectLevel(int number)
-	{
-		SceneManager.LoadScene("Level" + number);
-		Time.timeScale = 1;
-	}
+		//}
+	//}
+	//public void SelectLevel(int number)
+	//{
+		//SceneManager.LoadScene("Level" + number);
+		//Time.timeScale = 1;
+	//}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        SceneManager.LoadScene("Level" + (player.GetComponent<Player>().level + 1).ToString());
+    }
 }
