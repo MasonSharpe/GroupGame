@@ -42,7 +42,8 @@ public class Door : MonoBehaviour
                     }
                     else
                     {
-                        Player.maxStamina += 1;
+                        Player.maxStamina += 20;
+                        Player.health += 2;
                     }
                 }
             }
