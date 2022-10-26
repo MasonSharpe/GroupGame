@@ -23,7 +23,7 @@ public class Projectiles : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 6 && lifespan > 1f)
+        if (collision.gameObject.layer == 6 && lifespan > 0.5f)
         {
             Destroy(gameObject);
         }
