@@ -24,7 +24,7 @@ public class Pickup : MonoBehaviour
     public TextMeshProUGUI typeText;
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = swingSprite;
+        GetComponent<SpriteRenderer>().sprite = groundSprite;
     }
 
     // Update is called once per frame
@@ -88,7 +88,7 @@ public class Pickup : MonoBehaviour
                 swingStartup = tempSStartup;
                 swingDuration = tempSDuration;
                 swingSpeed = tempSSpeed;
-                GetComponent<SpriteRenderer>().sprite = swingSprite;
+                GetComponent<SpriteRenderer>().sprite = groundSprite;
             }
             if (isAdditive)
             {
