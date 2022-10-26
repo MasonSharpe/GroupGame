@@ -21,4 +21,10 @@ public class MainMenuScreen : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("LevelOne");
     }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
+    }
 }
