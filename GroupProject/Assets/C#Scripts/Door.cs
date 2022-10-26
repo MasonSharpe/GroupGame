@@ -55,14 +55,17 @@ public class Door : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
-            Player.enemiesLeft = enemiesInRoom;
-            Player.takenDamage = false;
             activeRoom = true;
-            enemy1.SetActive(true);
-            enemy2.SetActive(true);
-            enemy3.SetActive(true);
-            enemy4.SetActive(true);
-            enemy5.SetActive(true);
+            if (isGifter)
+            {
+                Player.enemiesLeft = enemiesInRoom;
+                Player.takenDamage = false;
+                enemy1.SetActive(true);
+                enemy2.SetActive(true);
+                enemy3.SetActive(true);
+                enemy4.SetActive(true);
+                enemy5.SetActive(true);
+            }
         }
     }
 }
