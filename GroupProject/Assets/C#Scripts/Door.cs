@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     public int enemiesInRoom = 1;
     public bool isBoss = false;
+    public bool isGifter = false;
     //public GameObject activationBox;
     bool activeRoom = false;
     public GameObject enemy1;
@@ -26,20 +27,23 @@ public class Door : MonoBehaviour
     {
         if (Player.enemiesLeft <= 0 && activeRoom)
         {
-            if (Player.health < Player.maxHealth)
+            if (isGifter)
             {
-                Player.health += 1;
-            }
-            if (!Player.takenDamage)
-            {
-                if (isBoss)
+                if (Player.health < Player.maxHealth)
                 {
-                    Player.maxHealth += 25;
-                    Player.health = Player.maxHealth;
+                    Player.health += 1;
                 }
-                else
+                if (!Player.takenDamage)
                 {
-                    Player.maxStamina += 1;
+                    if (isBoss)
+                    {
+                        Player.maxHealth += 25;
+                        Player.health = Player.maxHealth;
+                    }
+                    else
+                    {
+                        Player.maxStamina += 1;
+                    }
                 }
             }
             Destroy(gameObject);
