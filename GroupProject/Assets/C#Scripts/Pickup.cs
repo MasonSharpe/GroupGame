@@ -35,7 +35,7 @@ public class Pickup : MonoBehaviour
         speedText.text = "Speed: " + swingSpeed;
         if (!isAdditive)
         {
-            typeText.text = "Weapon";
+            typeText.text = type;
             weightText.text = "Weight: " + swingStartup;
         }
         else
@@ -76,6 +76,7 @@ public class Pickup : MonoBehaviour
                 float tempSStartup = Player.swingStartup;
                 float tempSDuration = Player.swingDuration;
                 int tempSSpeed = Player.swingSpeed;
+                Vector2 tempSSize = Player.swingSize;
                 Sprite tempSSprite = Player.swingSprite;
                 Player.swingSprite = swingSprite;
                 Player.damage = damage;
@@ -88,7 +89,8 @@ public class Pickup : MonoBehaviour
                 swingStartup = tempSStartup;
                 swingDuration = tempSDuration;
                 swingSpeed = tempSSpeed;
-                GetComponent<SpriteRenderer>().sprite = groundSprite;
+                swingSize = tempSSize;
+                GetComponent<SpriteRenderer>().sprite = swingSprite;
             }
             if (isAdditive)
             {
