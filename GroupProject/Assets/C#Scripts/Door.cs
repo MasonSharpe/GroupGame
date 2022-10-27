@@ -44,6 +44,10 @@ public class Door : MonoBehaviour
                     {
                         Player.maxStamina += 20;
                         Player.health += 2;
+                        if (Player.health > Player.maxHealth)
+                        {
+                            Player.health = Player.maxHealth;
+                        }
                     }
                 }
             }
