@@ -32,7 +32,7 @@ public class NextLevelButton : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "TutorialLevel")
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Level1");
         }
         else if (SceneManager.GetActiveScene().name == "Level4")
         {

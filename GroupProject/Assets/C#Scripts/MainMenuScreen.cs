@@ -19,7 +19,7 @@ public class MainMenuScreen : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("LevelOne");
+        SceneManager.LoadScene("TutorialLevel");
     }
 
     public void MainMenu()

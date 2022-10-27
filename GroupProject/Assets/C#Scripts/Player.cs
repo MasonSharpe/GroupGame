@@ -27,7 +27,9 @@ public class Player : MonoBehaviour
     public static float swingStartup = 0.5f; //CHANGABLE STATS
     public static int swingSpeed = 30;
     public static float swingDuration = 0.2f;
-    
+
+    public AudioClip swingSound;
+
     bool inDash = false;
     public Sprite defaultSprite;
     Vector3 mouseTarget;
@@ -121,6 +123,7 @@ public class Player : MonoBehaviour
         }
         if (timerStartup <= 0) // ATTACK SENDOUT
         {
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(swingSound);
             timerStartup = float.PositiveInfinity;
             GameObject weaponSpawn = Instantiate(weapon, transform.position, Quaternion.identity);
             timerReload = swingDuration;

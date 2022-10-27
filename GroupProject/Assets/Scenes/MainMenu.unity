@@ -480,5 +480,69 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2903372857640721772, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372857640721775, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372857640721775, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372857640721775, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858272828680, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160.7113
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858272828680, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 69.1216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858272828680, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.6443
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858272828680, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25.5608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858272828682, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858272828682, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4cbc8d8307c5af3479de404ea0bfe8bc, type: 3}
+    - target: {fileID: 2903372858846911674, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_text
+      value: Dangerous Nightmare
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858846911674, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_margin.z
+      value: -5.71875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 355.5585
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 47.137
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 101
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84500fdc52b048949bf3147354883492, type: 3}

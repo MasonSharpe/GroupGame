@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
+    public AudioClip hitSound;
     public float speed = 2.0f;
     public float close = 2.0f;
     float timerStartup = 1;
@@ -90,6 +91,7 @@ public class Enemy : MonoBehaviour
     {
         if (timerInvincibility <= 0 && collision.gameObject.tag == "Damage")
         {
+            GetComponent<AudioSource>().PlayOneShot(hitSound);
             health -= Player.damage;
             timerInvincibility = 0.1f;
             Destroy(collision.gameObject);
