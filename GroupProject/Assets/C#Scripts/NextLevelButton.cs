@@ -34,6 +34,10 @@ public class NextLevelButton : MonoBehaviour
         {
             SceneManager.LoadScene("Level2");
         }
+        else if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            SceneManager.LoadScene("EndScreen");
+        }
         else
         {
             SceneManager.LoadScene("Level" + (player.GetComponent<Player>().level + 1).ToString());
