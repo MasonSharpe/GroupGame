@@ -27,4 +27,9 @@ public class MainMenuScreen : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void Exit()
+    {
+      
+    }
 }

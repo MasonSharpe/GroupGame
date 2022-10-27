@@ -69,6 +69,10 @@ public class Player : MonoBehaviour
         float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            health += 1;
+        }
         if (timerInvincibility > 0)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.6f);
