@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public static float stamina = 100;
     public static float maxStamina = 100;
     public static bool takenDamage = false;
+    public static string swingName = "Basic Sword";
     public int level = 2;
 
     public RuntimeAnimatorController playerWalk;

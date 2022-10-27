@@ -78,18 +78,21 @@ public class Pickup : MonoBehaviour
                 int tempSSpeed = Player.swingSpeed;
                 Vector2 tempSSize = Player.swingSize;
                 Sprite tempSSprite = Player.swingSprite;
+                string tempSName = Player.swingName;
                 Player.swingSprite = swingSprite;
                 Player.damage = damage;
                 Player.swingDuration = swingDuration;
                 Player.swingSpeed = swingSpeed;
                 Player.swingStartup = swingStartup;
                 Player.swingSize = swingSize;
+                Player.swingName = type;
                 swingSprite = tempSSprite;
                 damage = tempDamage;
                 swingStartup = tempSStartup;
                 swingDuration = tempSDuration;
                 swingSpeed = tempSSpeed;
                 swingSize = tempSSize;
+                type = tempSName;
                 GetComponent<SpriteRenderer>().sprite = swingSprite;
             }
             if (isAdditive)
