@@ -58,7 +58,6 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !GetComponent<SpriteRenderer>().enabled)
         {
-            print("bla");
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
             activeRoom = true;
