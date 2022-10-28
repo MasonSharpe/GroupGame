@@ -51,10 +51,20 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 10 + (level * 5);
-        maxHealth = health;
-        stamina = 100;
-        swingSprite = defaultSprite;
+        if (SceneManager.GetActiveScene().name == "TutorialLevel")
+        {
+            health = 10;
+            maxHealth = 10;
+            stamina = 100;
+            maxStamina = 100;
+            damage = 5;
+            swingSize = new Vector2(1.2f, 0.3f);
+            swingSprite = defaultSprite;
+            swingStartup = 0.5f;
+            swingSpeed = 30;
+            swingDuration = 0.2f;
+
+}
     }
 
     // Update is called once per frame
