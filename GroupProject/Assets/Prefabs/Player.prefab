@@ -307,6 +307,7 @@ MonoBehaviour:
   speed: 10
   weapon: {fileID: 6524823416319038313, guid: cb98911327fefaf478330144cf0d94de, type: 3}
   swingSound: {fileID: 8300000, guid: 13d79ef31c48e564ea62b7af99b81d99, type: 3}
+  dashSound: {fileID: 8300000, guid: 345d3c4f20d777743bbb3bf69d928d05, type: 3}
   defaultSprite: {fileID: 21300000, guid: 2c5abdcf874baec4b99b1cc136b0a9d2, type: 3}
   gameOverScreen: {fileID: 0}
   level: 2
