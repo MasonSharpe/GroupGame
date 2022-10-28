@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
@@ -69,6 +70,10 @@ public class Player : MonoBehaviour
         float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         if (Input.GetKeyDown(KeyCode.P))
         {
             health += 1;
