@@ -36,6 +36,7 @@ public class NextLevelButton : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "Level4")
         {
+            Player.health = Player.maxHealth;
             SceneManager.LoadScene("EndScreen");
         }
         else
