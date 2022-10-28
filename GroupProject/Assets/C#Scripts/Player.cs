@@ -207,6 +207,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             gameOverScreen.GetComponent<Canvas>().enabled = true;
+            health = maxHealth;
             Time.timeScale = 0;
         }
     }

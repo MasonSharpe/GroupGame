@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
             ppos = Vector3.zero;
             Destroy(weaponSpawn, timerReload);
         }
-        else if ((timerStartup >= 0 || playerDist >= close) && !unnoticed)
+        else if ((timerStartup >= 0 || playerDist >= close || hasAggro) && !unnoticed)
         {
             GetComponent<Rigidbody2D>().velocity = playerDir * speed;
             GetComponent<Animator>().SetFloat("xInput", playerDir.x);
