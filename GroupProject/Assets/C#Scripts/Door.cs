@@ -29,6 +29,7 @@ public class Door : MonoBehaviour
         {
             if (isGifter)
             {
+                Player.roomCleared = true;
                 if (Player.health < Player.maxHealth)
                 {
                     Player.health += 1;

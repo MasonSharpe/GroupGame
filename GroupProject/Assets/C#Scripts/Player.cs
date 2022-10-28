@@ -31,8 +31,10 @@ public class Player : MonoBehaviour
 
     public AudioClip swingSound;
     public AudioClip dashSound;
+    public AudioClip clearSound;
 
     bool inDash = false;
+    public static bool roomCleared = false;
     public Sprite defaultSprite;
     Vector3 mouseTarget;
     public static float health = 10;
@@ -71,6 +73,11 @@ public class Player : MonoBehaviour
         float xInput = Input.GetAxis("Horizontal"); // GETTING MOVEMENT INFO
         float yInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = new Vector2(xInput, yInput);
+        if (roomCleared)
+        {
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(clearSound, 0.2f);
+            roomCleared = false;
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
