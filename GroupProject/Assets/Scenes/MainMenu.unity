@@ -522,15 +522,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4cbc8d8307c5af3479de404ea0bfe8bc, type: 3}
     - target: {fileID: 2903372858846911674, guid: 84500fdc52b048949bf3147354883492, type: 3}
       propertyPath: m_text
-      value: Dangerous Nightmare
+      value: "As the Night \nStarts to Die"
       objectReference: {fileID: 0}
     - target: {fileID: 2903372858846911674, guid: 84500fdc52b048949bf3147354883492, type: 3}
       propertyPath: m_margin.z
       value: -5.71875
       objectReference: {fileID: 0}
     - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.58460957
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 355.5585
+      value: 289.3744
       objectReference: {fileID: 0}
     - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
       propertyPath: m_SizeDelta.y
@@ -538,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10
+      value: 47.575928
       objectReference: {fileID: 0}
     - target: {fileID: 2903372858846911675, guid: 84500fdc52b048949bf3147354883492, type: 3}
       propertyPath: m_AnchoredPosition.y
