@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public static float swingDuration = 0.2f;
 
     public AudioClip swingSound;
+    public AudioClip dashSound;
 
     bool inDash = false;
     public Sprite defaultSprite;
@@ -88,6 +89,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && Time.timeScale != 0 && timerStartup > 100 && timerPreDash < 0 && stamina >= 10 && !inDash) //DASH INITILIZATION
         {
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(dashSound);
             dashCurSpeed = moveDirection * speed * 3;
             inDash = true;
             timerDash = 0.1f;
