@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     public GameObject dCollidor;
     Vector3 ppos = Vector3.zero;
     bool unnoticed = true;
+    public bool hasAggro = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +43,7 @@ public class Enemy : MonoBehaviour
         }
         if (timerStartup <= 0)
         {
-            if (playerDist <= close)
+            if (playerDist <= close || hasAggro)
             {
                 timerTell -= Time.deltaTime;
                 timerAccuracy -= Time.deltaTime;

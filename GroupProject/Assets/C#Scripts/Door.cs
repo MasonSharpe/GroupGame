@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
     public GameObject enemy3;
     public GameObject enemy4;
     public GameObject enemy5;
+    public GameObject boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +72,10 @@ public class Door : MonoBehaviour
                 enemy3.SetActive(true);
                 enemy4.SetActive(true);
                 enemy5.SetActive(true);
+            }
+            if (isBoss)
+            {
+                boss.GetComponent<Enemy>().hasAggro = true;
             }
         }
     }
