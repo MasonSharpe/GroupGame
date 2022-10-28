@@ -38,13 +38,13 @@ public class Door : MonoBehaviour
                 {
                     if (isBoss)
                     {
-                        Player.maxHealth += 25;
-                        Player.health = Player.maxHealth;
+                        Player.maxHealth += 5;
+                        Player.health += 5;
                     }
                     else
                     {
                         Player.maxStamina += 20;
-                        Player.health += 2;
+                        Player.health += 1;
                         if (Player.health > Player.maxHealth)
                         {
                             Player.health = Player.maxHealth;
