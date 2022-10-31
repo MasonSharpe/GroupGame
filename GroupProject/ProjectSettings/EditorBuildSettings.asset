@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LevelSelection.unity
-    guid: 3e46ec84fdac9004fb1a804f9a13d3eb
+    path: Assets/Scenes/MainMenu.unity
+    guid: 612c040f0a614594ca9bde6b8f283a4c
+  - enabled: 1
+    path: Assets/Scenes/TutorialLevel.unity
+    guid: 1c31871ddb5dcc5459a5faa089cc2cd9
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: c1fc8613047f1c14b9cf2c7bf2126139
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: d6a5587d9f399fd4588b5e7b0d83251d
@@ -21,21 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level4.unity
     guid: 72751a085a98c7346bd2cc8b690e1247
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: c1fc8613047f1c14b9cf2c7bf2126139
-  - enabled: 1
-    path: Assets/Scenes/TutorialLevel.unity
-    guid: 1c31871ddb5dcc5459a5faa089cc2cd9
-  - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 0040500c412df53419698bf32167674c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
+    path: Assets/Scenes/PauseMenu.unity
     guid: 6f2053598bdbbc843b202d8dd68cf78b
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 612c040f0a614594ca9bde6b8f283a4c
   m_configObjects: {}
